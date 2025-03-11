@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoginSubmitRequest extends FormRequest
+class LoginVerifyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,8 @@ class LoginSubmitRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'phone' => 'required|numeric|min:10'
+            'email' => 'required|email',
+            'password' => 'required',
         ];
     }
 }
