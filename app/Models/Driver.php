@@ -7,6 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property numeric id
+ * @property numeric year
+ * @property string make
+ * @property string color
+ * @property string license_plate
+ * @property string created_at
+ * @property string updated_at
+ */
 class Driver extends Model
 {
     use HasFactory;

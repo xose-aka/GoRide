@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DriverController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,4 +22,7 @@ Route::post('/register', [LoginController::class, 'register']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/profile', [LoginController::class, 'profile']);
     Route::post('/logout', [LoginController::class, 'logout']);
+
+    Route::get('/driver', [DriverController::class, 'show']);
+    Route::post('/driver', [DriverController::class, 'update']);
 });
